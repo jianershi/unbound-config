@@ -1,6 +1,10 @@
 # Unbound Config
 
-unbound panel: https://grafana.com/grafana/dashboards/11705
+config files for unbound recursive dns and a dashboard config based on grafana, runnable on pi
+
+![screenshot](screenshot.png)
+
+dashboard: unbound panel: https://grafana.com/grafana/dashboards/11705
 
 ## Steps
 
