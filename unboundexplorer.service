@@ -1,0 +1,14 @@
+[Unit]
+Description=unbound explorer
+Documentation=https://github.com/kumina/unbound_exporter
+After=network.target
+
+[Service]
+Type=simple
+#Restart=always
+User=root
+#EnvironmentFile=/usr/bin/env/
+ExecStart=/usr/sbin/unbound_exporter -unbound.ca /etc/ssl/certs/unbound.crt -unbound.cert /etc/ssl/certs/unbound.crt -unbound.key /etc/ssl/certs/unbound.key
+
+[Install]
+WantedBy=multi-user.target
