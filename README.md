@@ -16,3 +16,22 @@ dashboard: unbound panel: https://grafana.com/grafana/dashboards/11705
 6. config PROMETHEUS file to use unbound_exporter as a source
 7. add data source -> prometheus in grafana web panel
 8. install unbound panel
+
+
+## Performance
+
+performance over 400Mbps/?Mbps cable connecton
+
+![performance](performance.png)
+
+```
+ Final benchmark results, sorted by nameserver performance:
+ (average cached name retrieval speed, fastest to slowest)
+
+  192.168.  1.  2 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  + Cached Name   | 0.000 | 0.000 | 0.002 | 0.000 | 100.0 |
+  + Uncached Name | 0.016 | 0.067 | 0.279 | 0.065 | 100.0 |
+  + DotCom Lookup | 0.018 | 0.046 | 0.088 | 0.026 | 100.0 |
+  ---<O-OO---->---+-------+-------+-------+-------+-------+
+```

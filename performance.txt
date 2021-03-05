@@ -1,0 +1,127 @@
+ Final benchmark results, sorted by nameserver performance:
+ (average cached name retrieval speed, fastest to slowest)
+
+  192.168.  1.  2 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  + Cached Name   | 0.000 | 0.000 | 0.002 | 0.000 | 100.0 |
+  + Uncached Name | 0.016 | 0.067 | 0.279 | 0.065 | 100.0 |
+  + DotCom Lookup | 0.018 | 0.046 | 0.088 | 0.026 | 100.0 |
+  ---<O-OO---->---+-------+-------+-------+-------+-------+
+           Non-routable local internet address
+                Local Network Nameserver
+
+
+  209.244.  0.  4 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.013 | 0.017 | 0.022 | 0.002 | 100.0 |
+  - Uncached Name | 0.015 | 0.077 | 0.222 | 0.065 | 100.0 |
+  - DotCom Lookup | 0.015 | 0.030 | 0.049 | 0.011 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                  resolver2.level3.net
+                       LEVEL3, US
+
+
+    1.  0.  0.  1 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.014 | 0.018 | 0.023 | 0.002 | 100.0 |
+  - Uncached Name | 0.016 | 0.077 | 0.252 | 0.074 | 100.0 |
+  - DotCom Lookup | 0.016 | 0.025 | 0.053 | 0.006 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                     one.one.one.one
+                    CLOUDFLARENET, US
+
+
+    8.  8.  8.  8 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.012 | 0.019 | 0.030 | 0.004 | 100.0 |
+  - Uncached Name | 0.015 | 0.047 | 0.170 | 0.047 | 100.0 |
+  - DotCom Lookup | 0.016 | 0.021 | 0.031 | 0.003 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                       dns.google
+                       GOOGLE, US
+
+
+    8.  8.  4.  4 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.012 | 0.019 | 0.029 | 0.003 | 100.0 |
+  - Uncached Name | 0.016 | 0.054 | 0.217 | 0.051 | 100.0 |
+  - DotCom Lookup | 0.014 | 0.024 | 0.058 | 0.007 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                       dns.google
+                       GOOGLE, US
+
+
+  209.244.  0.  3 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.015 | 0.019 | 0.025 | 0.003 | 100.0 |
+  - Uncached Name | 0.017 | 0.071 | 0.210 | 0.057 | 100.0 |
+  - DotCom Lookup | 0.015 | 0.032 | 0.048 | 0.009 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                  resolver1.level3.net
+                       LEVEL3, US
+
+
+    1.  1.  1.  1 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%|
+  ----------------+-------+-------+-------+-------+-------+
+  - Cached Name   | 0.014 | 0.019 | 0.025 | 0.002 | 100.0 |
+  - Uncached Name | 0.014 | 0.083 | 0.258 | 0.077 | 100.0 |
+  - DotCom Lookup | 0.018 | 0.028 | 0.056 | 0.008 | 100.0 |
+  ---<-------->---+-------+-------+-------+-------+-------+
+                     one.one.one.one
+                    CLOUDFLARENET, US
+
+
+  UTC: 2021-03-05, from 13:48:00 to 13:48:37, for 00:36.932
+
+Interpreting your benchmark results above:
+
+The following guide is only intended as a quick
+"get you going" reference and reminder.
+
+To obtain a working understanding of this program's operation, and to familiarize yourself with its many features, please see the main DNS Benchmark web page by clicking on the "Goto DNS Page" button below.
+
+Referring to this sample:
+
+ 64. 81.159.  2 |  Min  |  Avg  |  Max  |Std.Dev|Reliab%
+----------------+-------+-------+-------+-------+-------
+- Cached Name   | 0.001 | 0.001 | 0.001 | 0.000 | 100.0
+- Uncached Name | 0.021 | 0.033 | 0.045 | 0.016 | 100.0
+- DotCom Lookup | 0.021 | 0.022 | 0.022 | 0.001 | 100.0
+---<O-OO---->---+-------+-------+-------+-------+-------
+                 dns.chi1.speakeasy.net
+                        Speakeasy
+
+The Benchmark creates a table similar to the one above for each DNS resolver (nameserver) tested. The top line specifies the IP address of the nameserver for this table.
+
+The first three numeric columns provide the minimum, average, and maximum query-response times in seconds. Note that these timings incorporate all network delays from the querying computer, across the Internet, to the nameserver, the nameserver's own processing, and the return of the reply. Since the numbers contain three decimal digits of accuracy, the overall resolution of the timing is thousandths of a second, or milliseconds.
+
+The fourth numeric column shows the "standard deviation" of the collected query-response times which is a common statistical measure of the spread of the values - a smaller standard deviation means more consistency and less spread.
+
+The fifth and last numeric column shows the reliability of the tested nameserver's replies to queries. Since lost, dropped, or ignored queries introduce a significant lookup delay (typically a full second or more each) a nameserver's reliability is an important consideration.
+
+The labels of the middle three lines are colored red, green, and blue  to match their respective bars on the response time bar chart.
+
+The "Cached Name"  line presents the timings for queries that are answered from the server's own local name cache without requiring it to forward the query to other name servers. Since the name caches of active public nameservers will always be full of the IPs of common domains, the vast majority of queries will be cached. Therefore, the Benchmark gives this timing the highest weight.
+
+The "Uncached Name" line presents the timings for queries which could not be answered from the server's local cache and required it to ask another name server for the data. Specifically, this measures the time required to resolve the IP addresses of the Internet's 30 most popular web sites. The Benchmark gives this timing the second highest weight.
+
+The "DotCom Lookup"  line presents the timings for the resolution of dot com nameserver IP addresses. This differs from the Cached and Uncached tests above, since they measure the time required to determine a dot com's IP, whereas the DotCom Lookup measures the time required to resolve the IP of a dot com's nameserver, from which a dot com's IP would then be resolved. This test presents a measure of how well the DNS server being tested is connected to the dot com nameservers.
+
+The lower border of the table contains a set of eight indicators (O and -) representing non-routable networks whose IP addresses are actively blocked by the resolver to protect its users from DNS rebinding attacks:  <O-OO---->. The "O" character indicates that blocking is occurring for the corresponding network, whereas the "-" character indicates that non-routable IP addresses are being resolved and rebinding protection is not present. The first four symbols represent the four IPv4 networks beginning with 10., 127., 172., and 192. respectively, and the second four symbols are the same networks but for IPv6.
+
+The final two lines at the bottom of each chart duplicate the information from the Name and Owner tabs on the Nameserver page:
+
+                 dns.chi1.speakeasy.net
+                        Speakeasy
+
+The first line displays the "Reverse DNS" name of the server, if any. (This is the name looked up by the nameserver's IP address.) The second line displays the Ownership information, if any, of the network containing the nameserver
+
+The final line of the automatically generated chart is a timestamp that shows the date and time of the start, completion, and total elapsed time of the benchmark:
+
+UTC: 2009-07-15 from 16:41:50 to 16:44:59 for 03:08.703
+
+All times are given in Universal Coordinated Time (UTC) which is equivalent to GMT. In the sample shown above, the entire benchmark required 3 minutes, 8.703 seconds to run to completion.
+
+All, or a marked portion, of the Tabular Data results on this page may be copied to the Windows' clipboard or saved to a file for safe keeping, sharing, or later comparison.
+• • •
+
