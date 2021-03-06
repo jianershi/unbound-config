@@ -17,6 +17,9 @@ dashboard: unbound panel: https://grafana.com/grafana/dashboards/11705
 7. add data source -> prometheus in grafana web panel
 8. install unbound panel
 
+## Diagram
+
+![diagram](diagram.png)
 
 ## Performance
 
