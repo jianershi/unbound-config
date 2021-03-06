@@ -1,3 +1,0 @@
-[submodule "unbound_exporter"]
-	path = unbound_exporter
-	url = https://github.com/kumina/unbound_exporter
