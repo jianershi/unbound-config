@@ -14,12 +14,22 @@ general installations steps for ubuntu/debian distribution
 
    ```
    sudo apt-get install unbound
+   sudo curl -o /var/lib/unbound/root.hints https://www.internic.net/domain/named.cache
    sudo cp unbound.conf /etc/unbound/unbound.conf.d/
    sudo systemctl enable unbound
    sudo service unbound restart
    ```
 
    details for configuring unbound can be found at https://calomel.org/unbound_dns.html
+
+   * to generate self-signing server key if you don't have any
+
+     ````
+     openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out unbound.crt -keyout unbound.key
+     sudo cp unbound.crt /etc/ssl/certs/
+     sudo cp unbound.key /etc/ssl/certs/
+     sudo service unbound restart
+     ````
 
 2. install Grafana
 
