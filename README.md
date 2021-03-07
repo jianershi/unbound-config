@@ -8,14 +8,54 @@ dashboard: unbound panel: https://grafana.com/grafana/dashboards/11705
 
 ## Steps
 
+general installations steps for ubuntu/debian distribution
+
 1. install and config unbound, including setup new control certificate for the server (needed when exporting the stats with unbound_exporter)
+
+   ```
+   sudo apt-get install unbound
+   sudo cp unbound.conf /etc/unbound/unbound.conf.d/
+   sudo systemctl enable unbound
+   sudo service unbound restart
+   ```
+
+   details for configuring unbound can be found at https://calomel.org/unbound_dns.html
+
 2. install Grafana
+
+   * https://grafana.com/docs/grafana/latest/installation/debian/
+
 3. install PROMETHEUS
-4. compile [unbound_exporter](https://github.com/kumina/unbound_exporter) and install the executable to /usr/bin /usr/sbin, which export command line unbound_control stats to web api
-5. install the unbound_exporter as a systemd service
-6. config PROMETHEUS file to use unbound_exporter as a source
-7. add data source -> prometheus in grafana web panel
-8. install unbound panel
+
+   `sudo apt-get install prometheus`
+
+4. compile and install [unbound_exporter](https://github.com/kumina/unbound_exporter), which uses unbound control interface to export stats to a webpage
+
+   ```
+   go get github.com/kumina/unbound_exporter
+   go install github.com/kumina/unbound_exporter
+   sudo cp go/bin/unbound_exporter /usr/bin
+   sudo cp go/bin/unbound_exporter /usr/sbin
+   sudo cp unbound-exporter.service /lib/systemd/system/
+   sudo systemctl enable unbound-exporter.service
+   sudo service unbound-exporter restart
+   ```
+
+5. config PROMETHEUS file to use unbound_exporter as a source
+
+   * `sudo cp prometheus.yml /etc/prometheus/`
+
+   * may/maynot need to enable unbound scrap service in prometheus control panel at `http://pi_address:9090/targets`
+
+6. in grafana(`http://pi_address:3000`): add data source -> prometheus in grafana web panel
+
+   url: localhost:9090
+
+7. install unbound panel
+
+   manage panel->import->11075
+
+8. after installation, grafana should be accessed at `http://pi_address:3000`
 
 ## Diagram
 

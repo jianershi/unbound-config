@@ -1,5 +1,5 @@
 [Unit]
-Description=unbound explorer
+Description=unbound-exporter
 Documentation=https://github.com/kumina/unbound_exporter
 After=network.target
 
