@@ -22,15 +22,14 @@ general installations steps for ubuntu/debian distribution
 
    details for configuring unbound can be found at https://calomel.org/unbound_dns.html
 
-   * to generate self-signing server key if you don't have any
+   * to generate self-signing certificate for unbound control interface if you don't have any under /etc/unbound
 
      ````
-     openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out unbound.crt -keyout unbound.key
-     sudo cp unbound.crt /etc/ssl/certs/
-     sudo cp unbound.key /etc/ssl/certs/
-     sudo service unbound restart
+     sudo unbound-control-setup
      ````
-
+     
+     this will generate `unbound_server.pem`, `unbound_server.key`, `unbound_control.pem`, `unbound_control.key`
+   
 2. install Grafana
 
    * https://grafana.com/docs/grafana/latest/installation/debian/
