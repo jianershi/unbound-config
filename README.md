@@ -31,6 +31,15 @@ general installations steps for ubuntu/debian distribution
      ````
      
      this will generate `unbound_server.pem`, `unbound_server.key`, `unbound_control.pem`, `unbound_control.key`
+     
+   * to update `root.hint` automatically, edit `/etc/crontab`
+
+     ```
+     #unbound update root hint
+     55 4    * * *   root    curl -o /var/lib/unbound/root.hints https://www.internic.net/domain/named.cache
+     ```
+
+     to learn how to use crontab: [https://crontab guru](https://crontab.guru/#55_4_*_*_*)
 
 2. install Grafana
 
