@@ -8,7 +8,7 @@ config files for unbound recursive dns and a dashboard config based on grafana, 
 
 ## Steps
 
-general installations steps for ubuntu/debian distribution
+The following steps have been tested to be working on [**Ubuntu** Server 20.04.2 LTS](https://ubuntu.com/download/raspberry-pi) for Raspberry Pi 2. Newer versions of hardware should work as well.
 
 1. install and config unbound, including setup new control certificate for the server (needed when exporting the stats with unbound_exporter)
 
