@@ -4,7 +4,7 @@ config files for unbound recursive dns and a dashboard config based on grafana, 
 
 ![screenshot](screenshot.png)
 
-dashboard: unbound panel: https://grafana.com/grafana/dashboards/11705
+
 
 ## Steps
 
@@ -73,7 +73,8 @@ general installations steps for ubuntu/debian distribution
 
 7. install unbound panel
 
-   manage panel->import->11075
+   1. manage panel->import via panel json
+   2. copy contents in `grafana.json` over. This panel was modified from [unbound dashboard by svartalf](https://grafana.com/grafana/dashboards/11705)
 
 8. after installation, grafana should be accessed at `http://pi_address:3000`
 
