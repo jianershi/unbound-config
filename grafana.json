@@ -17,7 +17,7 @@
   "gnetId": 11705,
   "graphTooltip": 0,
   "id": 10,
-  "iteration": 1618647518132,
+  "iteration": 1618905559120,
   "links": [
     {
       "icon": "external link",
@@ -532,13 +532,13 @@
     },
     {
       "cards": {
-        "cardPadding": 0,
+        "cardPadding": null,
         "cardRound": null
       },
       "color": {
-        "cardColor": "#37872D",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateSpectral",
+        "cardColor": "rgb(88, 250, 64)",
+        "colorScale": "linear",
+        "colorScheme": "interpolatePlasma",
         "exponent": 0.5,
         "max": null,
         "min": null,
@@ -562,7 +562,7 @@
       "highlightCards": true,
       "id": 46,
       "legend": {
-        "show": false
+        "show": true
       },
       "pluginVersion": "7.5.3",
       "reverseYBuckets": false,
@@ -590,15 +590,15 @@
         "show": true
       },
       "xBucketNumber": null,
-      "xBucketSize": null,
+      "xBucketSize": "",
       "yAxis": {
-        "decimals": 0,
+        "decimals": 1,
         "format": "s",
-        "logBase": 1,
+        "logBase": 2,
         "max": null,
         "min": "0",
         "show": true,
-        "splitFactor": null
+        "splitFactor": 2
       },
       "yBucketBound": "upper",
       "yBucketNumber": null,
@@ -1766,7 +1766,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(unbound_queries_total{instance=\"$instance\"}[5m]))",
+          "expr": "sum(irate(unbound_queries_total{instance=\"$instance\"}[5m]))",
           "interval": "",
           "legendFormat": "rps",
           "queryType": "randomWalk",
@@ -4204,5 +4204,5 @@
   "timezone": "",
   "title": "Unbound",
   "uid": "9FQf4fEWz",
-  "version": 31
+  "version": 38
 }
