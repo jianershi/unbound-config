@@ -1,3 +1,9 @@
+this repo is no longer maintained. 
+
+currently I am using the docker version only.
+* https://github.com/jianershi/docker-unbound-grafana
+
+
 # Unbound Config
 
 config files for unbound recursive dns and a dashboard config based on grafana, runnable on pi
